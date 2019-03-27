@@ -32,7 +32,7 @@ RUN apk add --update --no-cache curl && \
     rm -rf phantomjs* && \ 
     apk del curl 
 
-RUN ls /usr/local/bin/phantomjs && \
+RUN ls /usr/local/bin/ && \
     /usr/local/bin/phantomjs --version
 
 ENV PHANTOMJS_BIN /usr/local/bin/phantomjs
