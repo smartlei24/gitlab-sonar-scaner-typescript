@@ -17,8 +17,6 @@ RUN \
     ls -lha /usr/bin/sonar* && \
     ln -s /usr/bin/sonar-scanner-run.sh /usr/bin/gitlab-sonar-scanner
 
-WORKDIR /usr/bin
-
 RUN \
     npm install -g typescript eslint
 
@@ -33,3 +31,7 @@ RUN apk add --update --no-cache curl && \
     mv phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/ && \
     rm -rf phantomjs* && \ 
     apk del curl
+
+ENV PHANTOMJS_BIN /usr/local/bin/phantomjs
+
+WORKDIR /usr/bin
