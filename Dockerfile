@@ -13,7 +13,7 @@ RUN \
     mv -fv /tmp/sonar-scanner-${SONAR_SCANNER_VERSION}/lib/* /usr/lib
 
 RUN \
-    apk add --no-cache nodejs nodejs-npm && \
+    apk add --no-cache nodejs nodejs-npm curl && \
     ls -lha /usr/bin/sonar* && \
     ln -s /usr/bin/sonar-scanner-run.sh /usr/bin/gitlab-sonar-scanner
 
@@ -25,14 +25,11 @@ RUN \
 ENV NODE_PATH "/usr/lib/node_modules/"
 
 
-RUN apk add --no-cache curl && \
-    curl -k -Ls "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2" | tar -jvxf - && \
-    cp ./phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs && \
-    rm -fR phantomjs-${PHANTOMJS_VERSION}-linux-x86_64 && \
-    apk del curl 
 
-COPY server.js /tmp
-
-EXPOSE 8910
-
-CMD ["phantomjs", "/tmp/server.js"]
+RUN apk add --update --no-cache curl && \
+    curl -Lo phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 && \
+    tar jxvf phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 && \
+    chmod +x phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs && \
+    mv phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/ && \
+    rm -rf phantomjs* && \ 
+    apk del curl
