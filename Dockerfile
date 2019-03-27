@@ -28,10 +28,12 @@ RUN apk add --update --no-cache curl && \
     curl -Lo phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 && \
     tar jxvf phantomjs.tar.bz2 && \
     chmod +x phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs && \
-    mv phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/ && \
+    mv phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs && \
     rm -rf phantomjs* && \ 
-    apk del curl && \
-    /usr/local/bin/phantomjs --version
+    apk del curl && 
+
+RUN ll /usr/local/bin/phantomjs && \
+    --version
 
 ENV PHANTOMJS_BIN /usr/local/bin/phantomjs
 
