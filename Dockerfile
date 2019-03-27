@@ -30,7 +30,7 @@ RUN apk add --update --no-cache curl && \
     chmod +x phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs && \
     mv phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs && \
     rm -rf phantomjs* && \ 
-    apk del curl && 
+    apk del curl 
 
 RUN ll /usr/local/bin/phantomjs && \
     --version
