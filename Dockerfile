@@ -21,3 +21,5 @@ WORKDIR /usr/bin
 RUN \
     npm install -g typescript eslint
 
+ENV NODE_PATH "/usr/lib/node_modules/"
+
