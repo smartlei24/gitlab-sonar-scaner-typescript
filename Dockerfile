@@ -28,7 +28,7 @@ ENV NODE_PATH "/usr/lib/node_modules/"
 
 RUN apk add --update --no-cache curl && \
     curl -Lo phantomjs.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 && \
-    tar jxvf phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 && \
+    tar jxvf phantomjs.tar.bz2 && \
     chmod +x phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs && \
     mv phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/ && \
     rm -rf phantomjs* && \ 
