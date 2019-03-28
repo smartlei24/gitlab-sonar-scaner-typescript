@@ -13,7 +13,7 @@ RUN \
     ls -lha /usr/bin/sonar* && \
     ln -s /usr/bin/sonar-scanner-run.sh /usr/bin/gitlab-sonar-scanner
 
-RUN apk add --no-cache nodejs@10.15.0
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.9/main/ nodejs=10.15.3
 
 WORKDIR /usr/bin
 
