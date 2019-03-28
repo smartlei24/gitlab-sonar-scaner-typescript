@@ -4,7 +4,7 @@ ENV SONAR_SCANNER_VERSION 3.3.0.1492
 ENV PHANTOMJS_VERSION 2.1.1
 ENV NODE_PATH "/usr/lib/node_modules/"
 
-ADD https://bintray.com/sonarsource/SonarQube/download_file?file_path=org%2Fsonarsource%2Fscanner%2Fcli%2Fsonar-scanner-cli%2F${SONAR_SCANNER_VERSION}%2Fsonar-scanner-cli-${SONAR_SCANNER_VERSION}a.zip /tmp/sonar-scanner.zip
+ADD https://bintray.com/sonarsource/SonarQube/download_file?file_path=org%2Fsonarsource%2Fscanner%2Fcli%2Fsonar-scanner-cli%2F${SONAR_SCANNER_VERSION}%2Fsonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip /tmp/sonar-scanner.zip
 
 WORKDIR /tmp
 
