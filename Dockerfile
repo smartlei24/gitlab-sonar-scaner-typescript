@@ -21,6 +21,10 @@ RUN \
 RUN curl -Ls "https://github.com/dustinblackman/phantomized/releases/download/${PHANTOMJS_VERSION}/dockerized-phantomjs.tar.gz" | tar xz -C / \
     && apk del curl
 
+# use 
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+ENV PATH=$PATH:/home/node/.npm-global/bin
+
 RUN \
     npm install -g typescript eslint phantomjs@${PHANTOMJS_VERSION}
 
