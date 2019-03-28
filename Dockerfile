@@ -22,6 +22,6 @@ RUN curl -Ls "https://github.com/dustinblackman/phantomized/releases/download/${
     && apk del curl
 
 RUN \
-    npm install -g typescript eslint phantomjs
+    npm install -g typescript eslint phantomjs@${PHANTOMJS_VERSION}
 
 WORKDIR /usr/bin
