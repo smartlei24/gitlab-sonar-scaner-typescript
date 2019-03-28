@@ -13,7 +13,7 @@ RUN \
     ls -lha /usr/bin/sonar* && \
     ln -s /usr/bin/sonar-scanner-run.sh /usr/bin/gitlab-sonar-scanner
 
-RUN apk add --no-cache --repository nodejs=10.15.3
+RUN apk add --no-cache --repository nodejs-current
 
 WORKDIR /usr/bin
 
