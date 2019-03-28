@@ -25,7 +25,7 @@ ENV NODE_PATH "/usr/lib/node_modules/"
 ENV PHANTOMJS_VERSION 2.1.1
 
 RUN curl -Ls "https://github.com/dustinblackman/phantomized/releases/download/${PHANTOMJS_VERSION}a/dockerized-phantomjs.tar.gz" | tar xz -C / && \
-    curl -k -Ls https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 | tar -jxvf - -C / && \
-    cp phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs && \
-    rm -fR phantomjs-${PHANTOMJS_VERSION}-linux-x86_64 && \
+    curl -k -Ls https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 | tar -jxvf - -C ./ && \
+    cp ./phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs && \
+    rm -fR ./phantomjs-${PHANTOMJS_VERSION}-linux-x86_64 && \
     apk del curl
