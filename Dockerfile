@@ -13,7 +13,7 @@ RUN \
     ls -lha /usr/bin/sonar* && \
     ln -s /usr/bin/sonar-scanner-run.sh /usr/bin/gitlab-sonar-scanner
 
-RUN apk update && apk add nodejs-current
+RUN apk update && apk add nodejs-current npm
 
 WORKDIR /usr/bin
 
