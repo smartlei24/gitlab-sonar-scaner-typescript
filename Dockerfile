@@ -18,7 +18,7 @@ RUN apk add --update --no-cache nodejs-current npm curl git
 WORKDIR /usr/bin
 
 RUN \
-    npm install -g typescript eslint
+    npm install -g typescript tslint
 
 ENV NODE_PATH "/usr/lib/node_modules/"
 
