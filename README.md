@@ -2,10 +2,6 @@
 a image can run code analysis of typescript in gitlab ci  
 提供 Typescript 的单元测试，Sonarscanner 静态分析的环境
 
-## 目前用于
-
-- PO 前端项目 Gitlab CI 跑 Sonarqube 分析
-
 ## 环境
 
 基础镜像： openjdk:8-jdk-alpine
